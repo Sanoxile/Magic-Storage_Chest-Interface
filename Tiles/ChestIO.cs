@@ -11,19 +11,24 @@ namespace ChestInterface.Tiles
     {
         public override void SetStaticDefaults()
         {
-            Main.tileSolid[Type] = true; // solid block
-            Main.tileFrameImportant[Type] = true; // crucial for multi-tiles
+            // Tile stats
+            Main.tileSolid[Type] = false;
+            Main.tileFrameImportant[Type] = true;
             Main.tileNoAttach[Type] = true;
-            Main.tileLavaDeath[Type] = true;
+            Main.tileLavaDeath[Type] = false;
+            Main.tileSolidTop[Type] = true;
+            TileID.Sets.Platforms[Type] = true;
 
             // 2x2 tile setup
             TileObjectData.newTile.CopyFrom(TileObjectData.Style2x2);
-            TileObjectData.newTile.Origin = new Point16(1, 1); // bottom-left placement
-            TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16 }; // two rows
+            TileObjectData.newTile.Origin = new Point16(1, 1);
+            TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16 };
             TileObjectData.addTile(Type);
 
+            // Map stuff
             AddMapEntry(new Color(200, 200, 200));
 
+            // Sound and particles
             DustType = DustID.Iron;
             HitSound = SoundID.Dig;
         }

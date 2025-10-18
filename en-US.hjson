@@ -1,0 +1,10 @@
+Mods: {
+	ChestInterface: {
+		Items: {
+			ChestIO: {
+				DisplayName: Chest I O
+				Tooltip: ""
+			}
+		}
+	}
+}
