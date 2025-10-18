@@ -3,32 +3,28 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
+using Terraria.DataStructures;
 
-namespace chest_compadability.Tiles
+namespace ChestInterface.Tiles
 {
     public class ChestIO : ModTile
     {
         public override void SetStaticDefaults()
         {
-            Main.tileSolid[Type] = false;
-            Main.tileSolidTop[Type] = true;
+            Main.tileSolid[Type] = true; // solid block
+            Main.tileFrameImportant[Type] = true; // crucial for multi-tiles
             Main.tileNoAttach[Type] = true;
-            Main.tileTable[Type] = false;
-            Main.tileFrameImportant[Type] = true;
-            Main.tileLavaDeath[Type] = false;
-            TileID.Sets.Platforms[Type] = true;
-            Main.tileBlockLight[Type] = false;
-            Main.tileNoSunLight[Type] = false;
+            Main.tileLavaDeath[Type] = true;
 
-            TileObjectData.newTile.CopyFrom(TileObjectData.Style1x1);
-            TileObjectData.newTile.CoordinateHeights = new[] { 16 }; // 1 tile tall
+            // 2x2 tile setup
+            TileObjectData.newTile.CopyFrom(TileObjectData.Style2x2);
+            TileObjectData.newTile.Origin = new Point16(1, 1); // bottom-left placement
+            TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16 }; // two rows
             TileObjectData.addTile(Type);
 
-            var itemName = CreateMapEntryName();
-            itemName.Format("Chest I/O");
-            AddMapEntry(new Color(200, 200, 200), itemName);
+            AddMapEntry(new Color(200, 200, 200));
 
-            DustType = DustID.Copper;
+            DustType = DustID.Iron;
             HitSound = SoundID.Dig;
         }
     }

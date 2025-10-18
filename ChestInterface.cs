@@ -5,10 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using Terraria.ModLoader;
 
-namespace chest_compadability
+namespace ChestInterface
 {
 	// Please read https://github.com/tModLoader/tModLoader/wiki/Basic-tModLoader-Modding-Guide#mod-skeleton-contents for more information about the various files in a mod.
-	public class chest_compadability : Mod
+	public class ChestInterface : Mod
 	{
 
 	}

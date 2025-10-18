@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Alex\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\chest_compadability\\chest_compadability.csproj",
-      "projectName": "chest_compadability",
-      "projectPath": "C:\\Users\\Alex\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\chest_compadability\\chest_compadability.csproj",
+      "projectUniqueName": "C:\\Users\\Alex\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\ChestInterface\\ChestInterface.csproj",
+      "projectName": "ChestInterface",
+      "projectPath": "C:\\Users\\Alex\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\ChestInterface\\ChestInterface.csproj",
       "packagesPath": "C:\\Users\\Alex\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Alex\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\chest_compadability\\obj\\",
+      "outputPath": "C:\\Users\\Alex\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\ChestInterface\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Alex\\AppData\\Roaming\\NuGet\\NuGet.Config"

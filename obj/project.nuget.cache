@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wpd1TOUYp8Iny7WeAgauIurgt4kcDYfKKRTfigl6t/+vWCOCE1Yxlns4DViubNCouNmAhfgS/H8AV/mghyCe4A==",
+  "dgSpecHash": "GFLAqJ8SmPI5rKkTv52r8Kaln6nJIl5kzsfUvLe9v+TrtVerV6VWtF4g6ph0NbxdYTfeiRP0jITqsRT549NbNA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Alex\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\chest_compadability\\chest_compadability.csproj",
+  "projectFilePath": "C:\\Users\\Alex\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\ChestInterface\\ChestInterface.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
