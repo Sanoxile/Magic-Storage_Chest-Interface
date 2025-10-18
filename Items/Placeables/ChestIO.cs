@@ -1,7 +1,6 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using MagicStorage;
 
 namespace ChestInterface.Items.Placeables
 {
@@ -24,15 +23,16 @@ namespace ChestInterface.Items.Placeables
         }
 
         public override void AddRecipes()
-		{
-			Recipe recipe = CreateRecipe();
-			recipe.AddIngredient<StorageComponent>();
-			recipe.AddRecipeGroup("MagicStorage:AnyDiamond");
-			recipe.AddRecipeGroup("IronBar", 3);
+        {
+            // Stuff
+            Mod magicStorage = ModLoader.GetMod("MagicStorage");
+
+            // Recipe
+            Recipe recipe = CreateRecipe();
+			recipe.AddIngredient(magicStorage.Find<ModItem>("StorageComponent").Type, 1);
+			recipe.AddRecipeGroup("MagicStorage:AnyDiamond", 2);
+			recipe.AddRecipeGroup("IronBar", 5);
 			recipe.AddTile(TileID.WorkBenches);
-			// Mechs must be defeated in order to shimmer this item
-			// While the item can't be decrafted, this condition is still checked for item transformations
-			recipe.AddDecraftCondition(Condition.DownedMechBossAll);
 			recipe.Register();
 		}
     }
