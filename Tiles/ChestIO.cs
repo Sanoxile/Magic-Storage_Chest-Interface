@@ -4,6 +4,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 using Terraria.DataStructures;
+using Terraria.Localization;
 
 namespace ChestInterface.Tiles
 {
@@ -15,9 +16,8 @@ namespace ChestInterface.Tiles
             Main.tileSolid[Type] = false;
             Main.tileFrameImportant[Type] = true;
             Main.tileNoAttach[Type] = true;
-            Main.tileLavaDeath[Type] = false;
             Main.tileSolidTop[Type] = true;
-            TileID.Sets.Platforms[Type] = true;
+            Main.tileLavaDeath[Type] = false;
 
             // 2x2 tile setup
             TileObjectData.newTile.CopyFrom(TileObjectData.Style2x2);
@@ -26,7 +26,7 @@ namespace ChestInterface.Tiles
             TileObjectData.addTile(Type);
 
             // Map stuff
-            AddMapEntry(new Color(200, 200, 200));
+            AddMapEntry(new Color(200, 200, 200), CreateMapEntryName());
 
             // Sound and particles
             DustType = DustID.Iron;

@@ -1,8 +1,0 @@
-Items: {
-	ChestIO: {
-		DisplayName: Chest Interface
-		Tooltip: Acts as an interface between magic storage and chests.
-	}
-}
-
-Tiles.ChestIO.MapEntry: Chest Interface
