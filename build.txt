@@ -1,0 +1,7 @@
+displayName = Magic Storage - Chest Compadability
+author = Sanoxile
+version = 0.1
+hideCode = false
+homepage = 
+buildIgnore = *.csproj, *.user, obj\*, bin\*, .vs\*, Old\*
+modReferences = MagicStorage@0.7.0.11
