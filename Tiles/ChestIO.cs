@@ -4,9 +4,9 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 
-namespace chest_compadability.Tiles // ✅ this part is crucial
+namespace chest_compadability.Tiles
 {
-    public class ChestIO : ModTile // ✅ must inherit ModTile
+    public class ChestIO : ModTile
     {
         public override void SetStaticDefaults()
         {

@@ -1,2 +1,8 @@
-# This file will automatically update with entries for new content after a build and reload.
+Items: {
+	ChestIO: {
+		DisplayName: Chest Interface
+		Tooltip: "Acts as an interface between magic storage and chests."
+	}
+}
 
+Tiles.ChestIO.MapEntry: Chest I O
