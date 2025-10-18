@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("chest_compadability")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4c9994e34be910413ce4fbb398974425eb3238f0")]
 [assembly: System.Reflection.AssemblyProductAttribute("chest_compadability")]
 [assembly: System.Reflection.AssemblyTitleAttribute("chest_compadability")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
