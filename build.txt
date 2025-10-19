@@ -4,5 +4,4 @@ version = 0.1
 hideCode = false
 homepage = https://github.com/Sanoxile/Magic-Storage_Chest-Interface
 buildIgnore = *.csproj, *.user, obj\*, bin\*, .vs\*, Old\*
-dependencies = MagicStorage@0.7.0.11
 modReferences = MagicStorage@0.7.0.11

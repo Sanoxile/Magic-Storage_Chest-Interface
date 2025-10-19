@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ChestInterface")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+df00c968a927b3c11cd9ffce476af11fab70ca69")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2ddb131908d06de369b2d333e067d48951191f39")]
 [assembly: System.Reflection.AssemblyProductAttribute("ChestInterface")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ChestInterface")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
