@@ -1,8 +1,6 @@
 using Terraria;
 using Terraria.ModLoader;
-using Terraria.DataStructures;
 using Microsoft.Xna.Framework;
-using MagicStorage;
 using MagicStorage.Components;
 
 namespace ChestInterface.TileEntities
@@ -18,7 +16,9 @@ namespace ChestInterface.TileEntities
                 var heart = GetHeart();
                 if (heart != null)
                 {
-                    Main.NewText($"[ChestIO] Connected to heart at {heart.Position.X}, {heart.Position.Y}", Color.LimeGreen);
+                    // Convert the TE position to the visible top-left tile of the heart
+                    Tile tile = Main.tile[heart.Position.X, heart.Position.Y];
+                    Main.NewText($"[ChestIO] Connected to heart at tile coords ({heart.Position.X/16}, {heart.Position.Y/16})", Color.LimeGreen);
                 }
             }
         }

@@ -17,7 +17,7 @@ using Terraria.ModLoader;
 
 namespace ChestInterface.Tiles
 {
-    public class ChestIO : MagicStorage.Components.StorageComponent
+    public class ChestIO : StorageComponent
     {
         public override ModTileEntity GetTileEntity() => ModContent.GetInstance<TEChestIO>();
 
