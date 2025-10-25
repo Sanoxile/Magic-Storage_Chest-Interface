@@ -1,2 +1,4 @@
+# Ignore folders that aren't for building
 obj/
 bin/
+tmp/
