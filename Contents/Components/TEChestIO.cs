@@ -1,9 +1,8 @@
 using Terraria;
 using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
 using MagicStorage.Components;
 
-namespace ChestInterface.TileEntities
+namespace ChestInterface.Contents.Components
 {
     public class TEChestIO : TEStorageComponent
     {
@@ -15,7 +14,7 @@ namespace ChestInterface.TileEntities
         public override bool ValidTile(in Tile tile)
         {
             // Ensure this TE only works with your ChestIO tile
-            return tile.HasTile && tile.TileType == ModContent.TileType<Tiles.ChestIO>();
+            return tile.HasTile && tile.TileType == ModContent.TileType<ChestIO>();
         }
     }
 }

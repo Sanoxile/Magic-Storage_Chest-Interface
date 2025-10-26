@@ -2,7 +2,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace ChestInterface.Items.Placeables
+namespace ChestInterface.Contents.Items
 {
     public class ChestIO : ModItem
     {
@@ -24,7 +24,7 @@ namespace ChestInterface.Items.Placeables
             Item.consumable = true;
             Item.rare = ItemRarityID.LightRed;
             Item.value = Item.sellPrice(gold: 1, silver: 20);
-            Item.createTile = ModContent.TileType<Tiles.ChestIO>();
+            Item.createTile = ModContent.TileType<Components.ChestIO>();
         }
 
         public override void AddRecipes()
