@@ -3,6 +3,11 @@ Tiles.ChestIO.MapEntry: Chest Interface
 Items: {
 	ChestIO: {
 		DisplayName: Chest Interface
-		Tooltip: Acts as an interface between magic storage and chests.
+		Tooltip:
+			'''
+			Acts as an interface between chests 
+			and the Magic Storage system.
+			<Right-Click> for settings.
+			'''
 	}
 }
