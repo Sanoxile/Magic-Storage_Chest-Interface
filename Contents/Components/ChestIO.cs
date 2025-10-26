@@ -70,7 +70,6 @@ namespace ChestInterface.Contents.Components
                 Main.NewText("Storage Heart is not connected", Color.DarkRed);
                 return true;
             }
-
             
             return true;
         }
