@@ -1,7 +1,14 @@
+using MagicStorage;
 using MagicStorage.Components;
+using MagicStorage.Common.Players;
+using MagicStorage.Common.Systems;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
+using Terraria.Audio;
+using Terraria.ID;
+using Terraria.GameInput;
+using Terraria.Localization;
 using Terraria.DataStructures;
 using Terraria.GameContent.Drawing;
 using Terraria.GameContent.ObjectInteractions;
@@ -70,11 +77,84 @@ namespace ChestInterface.Contents.Components
                 Main.NewText("Storage Heart is not connected", Color.DarkRed);
                 return true;
             }
-            
+
+            OpenChestInterface(Main.LocalPlayer, i, j);
+
             return true;
         }
+
+        internal static void OpenChestInterface(Player player, int i, int j, bool remoteCrafting = false)
+        {
+            StoragePlayer modPlayer = player.GetModPlayer<StoragePlayer>();
+            Main.mouseRightRelease = false;
+            if (player.sign > -1)
+            {
+                SoundEngine.PlaySound(SoundID.MenuClose);
+                player.sign = -1;
+                Main.editSign = false;
+                Main.npcChatText = string.Empty;
+            }
+
+            if (Main.editChest)
+            {
+                SoundEngine.PlaySound(SoundID.MenuTick);
+                Main.editChest = false;
+                Main.npcChatText = string.Empty;
+            }
+
+            if (player.editedChestName)
+            {
+                NetMessage.SendData(MessageID.SyncPlayerChest, -1, -1, NetworkText.FromLiteral(Main.chest[player.chest].name), player.chest, 1f);
+                player.editedChestName = false;
+            }
+
+            if (player.talkNPC > -1)
+            {
+                player.SetTalkNPC(-1);
+                Main.npcChatCornerItem = 0;
+                Main.npcChatText = string.Empty;
+            }
+
+            if (MagicUI.IsSecurityUIOpen())
+            {
+                // Either the Security UI is being opened, or the player is switching to a new UI
+                // Prevent the UI from being closed by later conditions
+                modPlayer.CloseStorage();
+            }
+
+            bool hadChestOpen = player.chest != -1;
+            player.chest = -1;
+            Main.stackSplit = 600;
+            Point16 toOpen = new(i, j);
+            Point16 prevOpen = modPlayer.ViewingStorage();
+            if (prevOpen == toOpen)
+            {
+                modPlayer.CloseStorage();
+                SoundEngine.PlaySound(SoundID.MenuClose);
+                Recipe.FindRecipes();
+            }
+            else
+            {
+                bool hadOtherOpen = prevOpen.X >= 0 && prevOpen.Y >= 0;
+                if (hadOtherOpen)
+                    modPlayer.CloseStorage();
+
+                modPlayer.OpenStorage(toOpen);
+                modPlayer.remoteCrafting = remoteCrafting;
+                modPlayer.timeSinceOpen = 0;
+                if (PlayerInput.GrappleAndInteractAreShared)
+                    PlayerInput.Triggers.JustPressed.Grapple = false;
+                Main.playerInventory = true;
+                Main.recBigList = false;
+                Main.CreativeMenu.CloseMenu();
+                if (TileEntity.ByPosition.TryGetValue(toOpen, out TileEntity te) && te is TEStorageComponent)
+                    player.tileEntityAnchor.Set(te.ID, i, j);
+                SoundEngine.PlaySound(hadChestOpen || hadOtherOpen ? SoundID.MenuTick : SoundID.MenuOpen);
+                Recipe.FindRecipes();
+            }
+        }
         
-        internal void OpenChestInterface()
+        internal static void UIClose()
         {
             
         }
