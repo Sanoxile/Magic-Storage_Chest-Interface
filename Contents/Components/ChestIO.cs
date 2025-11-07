@@ -5,14 +5,12 @@ using MagicStorage.Common.Systems;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
-using Terraria.Audio;
 using Terraria.ID;
-using Terraria.GameInput;
-using Terraria.Localization;
 using Terraria.DataStructures;
 using Terraria.GameContent.Drawing;
 using Terraria.GameContent.ObjectInteractions;
 using Terraria.ModLoader;
+using ChestInterface.Contents.UI;
 
 namespace ChestInterface.Contents.Components
 {
@@ -78,83 +76,23 @@ namespace ChestInterface.Contents.Components
                 return true;
             }
 
-            OpenChestInterface(Main.LocalPlayer, i, j);
+            // Here we go
+            if (Main.netMode == NetmodeID.Server)
+                return false;
+                
+            Main.playerInventory = true;
+            // This opens the Magic Storage UI for this tile
+            
 
+            // If you want to open your own UI instead of the normal storage UI,
+            // you can replace the line above with your own MagicUI state call:
+            MagicUI.uiInterface.SetState(new ChestInterfaceUI());
+
+            // Here we go
             return true;
         }
 
         internal static void OpenChestInterface(Player player, int i, int j, bool remoteCrafting = false)
-        {
-            StoragePlayer modPlayer = player.GetModPlayer<StoragePlayer>();
-            Main.mouseRightRelease = false;
-            if (player.sign > -1)
-            {
-                SoundEngine.PlaySound(SoundID.MenuClose);
-                player.sign = -1;
-                Main.editSign = false;
-                Main.npcChatText = string.Empty;
-            }
-
-            if (Main.editChest)
-            {
-                SoundEngine.PlaySound(SoundID.MenuTick);
-                Main.editChest = false;
-                Main.npcChatText = string.Empty;
-            }
-
-            if (player.editedChestName)
-            {
-                NetMessage.SendData(MessageID.SyncPlayerChest, -1, -1, NetworkText.FromLiteral(Main.chest[player.chest].name), player.chest, 1f);
-                player.editedChestName = false;
-            }
-
-            if (player.talkNPC > -1)
-            {
-                player.SetTalkNPC(-1);
-                Main.npcChatCornerItem = 0;
-                Main.npcChatText = string.Empty;
-            }
-
-            if (MagicUI.IsSecurityUIOpen())
-            {
-                // Either the Security UI is being opened, or the player is switching to a new UI
-                // Prevent the UI from being closed by later conditions
-                modPlayer.CloseStorage();
-            }
-
-            bool hadChestOpen = player.chest != -1;
-            player.chest = -1;
-            Main.stackSplit = 600;
-            Point16 toOpen = new(i, j);
-            Point16 prevOpen = modPlayer.ViewingStorage();
-            if (prevOpen == toOpen)
-            {
-                modPlayer.CloseStorage();
-                SoundEngine.PlaySound(SoundID.MenuClose);
-                Recipe.FindRecipes();
-            }
-            else
-            {
-                bool hadOtherOpen = prevOpen.X >= 0 && prevOpen.Y >= 0;
-                if (hadOtherOpen)
-                    modPlayer.CloseStorage();
-
-                modPlayer.OpenStorage(toOpen);
-                modPlayer.remoteCrafting = remoteCrafting;
-                modPlayer.timeSinceOpen = 0;
-                if (PlayerInput.GrappleAndInteractAreShared)
-                    PlayerInput.Triggers.JustPressed.Grapple = false;
-                Main.playerInventory = true;
-                Main.recBigList = false;
-                Main.CreativeMenu.CloseMenu();
-                if (TileEntity.ByPosition.TryGetValue(toOpen, out TileEntity te) && te is TEStorageComponent)
-                    player.tileEntityAnchor.Set(te.ID, i, j);
-                SoundEngine.PlaySound(hadChestOpen || hadOtherOpen ? SoundID.MenuTick : SoundID.MenuOpen);
-                Recipe.FindRecipes();
-            }
-        }
-        
-        internal static void UIClose()
         {
             
         }

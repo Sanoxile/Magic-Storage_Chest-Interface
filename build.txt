@@ -1,6 +1,6 @@
 displayName = Chest Interface
 author = Sanoxile
-version = 0.2
+version = 0.3.0
 hideCode = false
 homepage = https://github.com/Sanoxile/Magic-Storage_Chest-Interface
 buildIgnore = *.csproj, *.user, obj\*, bin\*, .vs\*, Old\*

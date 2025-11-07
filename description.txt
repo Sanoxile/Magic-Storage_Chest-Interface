@@ -1,1 +1,2 @@
-Modify this file with a description of your mod.
+This mod is currently in beta and does not work.
+This work is currently released for testing purposes.
