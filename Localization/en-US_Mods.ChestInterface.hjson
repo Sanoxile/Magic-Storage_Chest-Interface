@@ -1,13 +1,8 @@
-Tiles.ChestIO.MapEntry: Chest Interface
+Tiles.ChestInterface.MapEntry: Chest Interface
 
 Items: {
-	ChestIO: {
+	ChestInterface: {
 		DisplayName: Chest Interface
-		Tooltip:
-			'''
-			Acts as an interface between chests 
-			and the Magic Storage system.
-			<Right-Click> for settings.
-			'''
+		Tooltip: ""
 	}
 }

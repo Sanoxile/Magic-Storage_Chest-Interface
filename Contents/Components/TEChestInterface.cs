@@ -3,7 +3,6 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using MagicStorage.Components;
 using Terraria.DataStructures;
-using System.Drawing;
 using System.Collections.Generic;
 
 namespace ChestInterface.Contents.Components

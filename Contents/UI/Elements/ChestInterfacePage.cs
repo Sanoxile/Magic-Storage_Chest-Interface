@@ -1,20 +1,19 @@
 using MagicStorage.UI.States;
 using Microsoft.Xna.Framework;
 using Terraria.GameContent.UI.Elements;
+using System.Collections.Generic;
 
-namespace ChestInterface.Contents.UI
+namespace ChestInterface.Contents.UI.Elements
 {
-    public class ChestInterfacePage : BaseStorageUIPage
+    public class ChestInterfacePage(BaseStorageUI parent) : BaseStorageUIPage(parent, "Main")
     {
         private UIText text;
-
-        public ChestInterfacePage(BaseStorageUI parent) : base(parent, "Main") { }
 
         public override void OnInitialize()
         {
             text = new UIText("Hello from Custom Magic Storage UI!");
-            text.Top.Set(20f, 0f);
-            text.Left.Set(20f, 0f);
+            text.Top.Set(4f, 0f);
+            text.Left.Set(4f, 0f);
             Append(text);
         }
 

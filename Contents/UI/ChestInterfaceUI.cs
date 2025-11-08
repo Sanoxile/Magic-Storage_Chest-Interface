@@ -1,24 +1,27 @@
 using MagicStorage.UI.States;
 using System.Collections.Generic;
+using Terraria.Localization;
+using ChestInterface.Contents.UI.Elements;
 
 namespace ChestInterface.Contents.UI
 {
     public class ChestInterfaceUI : BaseStorageUI
     {
-        public override string DefaultPage => "Main";
+    public override string DefaultPage => "Main";
 
-        protected override IEnumerable<string> GetMenuOptions() =>
-            new string[] { "Main" }; // One tab named "Main"
+    protected override IEnumerable<string> GetMenuOptions() =>
+        new string[] { "Main" };
 
-        protected override BaseStorageUIPage InitPage(string page)
-        {
-            if (page == "Main")
-                return new ChestInterfacePage(this);
-            throw new System.ArgumentException("Unknown page: " + page);
-        }
+    protected override BaseStorageUIPage InitPage(string page)
+    {
+        if (page == "Main")
+            return new ChestInterfacePage(this);
 
-        public override string GetSearchText() => string.Empty;
+        throw new System.ArgumentException("Unknown page: " + page);
+    }
 
-        public override float GetMinimumResizeHeight() => 200f;
+    public override string GetSearchText() => string.Empty;
+
+    public override float GetMinimumResizeHeight() => 200f;
     }
 }

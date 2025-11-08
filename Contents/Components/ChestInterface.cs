@@ -1,6 +1,4 @@
-using MagicStorage;
 using MagicStorage.Components;
-using MagicStorage.Common.Players;
 using MagicStorage.Common.Systems;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -46,7 +44,7 @@ namespace ChestInterface.Contents.Components
 
             base.MouseOver(i, j);
         }
-        
+
         // After drawing the initial tile then draw the glow if not hidden by echo paint
         public override void PostDraw(int i, int j, SpriteBatch spriteBatch)
         {
@@ -79,10 +77,10 @@ namespace ChestInterface.Contents.Components
             // Here we go
             if (Main.netMode == NetmodeID.Server)
                 return false;
-                
+
             Main.playerInventory = true;
             // This opens the Magic Storage UI for this tile
-            
+
 
             // If you want to open your own UI instead of the normal storage UI,
             // you can replace the line above with your own MagicUI state call:
@@ -94,7 +92,7 @@ namespace ChestInterface.Contents.Components
 
         internal static void OpenChestInterface(Player player, int i, int j, bool remoteCrafting = false)
         {
-            
+
         }
     }
 }
