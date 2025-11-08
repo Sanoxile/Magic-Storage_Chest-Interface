@@ -23,7 +23,7 @@ namespace MagicStorageAddons.Contents.Items
             Item.useTime = 10;
             Item.useStyle = ItemUseStyleID.Swing;
             Item.consumable = true;
-            Item.rare = ItemRarityID.LightRed;
+            Item.rare = ItemRarityID.Red;
             Item.value = Item.sellPrice(gold: 1, silver: 20);
             Item.createTile = ModContent.TileType<Components.ChestInterface>();
         }

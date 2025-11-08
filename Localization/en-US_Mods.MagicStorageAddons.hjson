@@ -1,0 +1,13 @@
+Items: {
+	ChestInterface: {
+		Tooltip: ""
+		DisplayName: Chest Interface
+	}
+
+	Filter: {
+		Tooltip: ""
+		DisplayName: Filter
+	}
+}
+
+Tiles.ChestInterface.MapEntry: Chest Interface
