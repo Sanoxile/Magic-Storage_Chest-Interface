@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace ChestInterface.Contents.Items
 {
-    public class ChestIO : ModItem
+    public class ChestInterface : ModItem
     {
         public override void SetStaticDefaults()
         {
@@ -25,7 +25,7 @@ namespace ChestInterface.Contents.Items
             Item.consumable = true;
             Item.rare = ItemRarityID.LightRed;
             Item.value = Item.sellPrice(gold: 1, silver: 20);
-            Item.createTile = ModContent.TileType<Components.ChestIO>();
+            Item.createTile = ModContent.TileType<Components.ChestInterface>();
         }
 
         public override void AddRecipes()

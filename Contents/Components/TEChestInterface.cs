@@ -8,15 +8,15 @@ using System.Collections.Generic;
 
 namespace ChestInterface.Contents.Components
 {
-    public class TEChestIO : TEStorageComponent
+    public class TEChestInterface : TEStorageComponent
     {
         // Internal vars
         public const int maxChestStorage = 5;
         internal Point16[] chestsCoords = new Point16[maxChestStorage];
         internal List<ModItem>[] filter = new List<ModItem>[maxChestStorage];
 
-        // Tells tmod that the tile accosiated with the tile entity is ChestIO
-        public override bool ValidTile(in Tile tile) => tile.HasTile && tile.TileType == ModContent.TileType<ChestIO>();
+        // Tells tmod that the tile accosiated with the tile entity is ChestInterface
+        public override bool ValidTile(in Tile tile) => tile.HasTile && tile.TileType == ModContent.TileType<ChestInterface>();
 
         // 
         public override void Update()

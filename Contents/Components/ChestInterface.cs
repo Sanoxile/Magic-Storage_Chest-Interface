@@ -14,13 +14,13 @@ using ChestInterface.Contents.UI;
 
 namespace ChestInterface.Contents.Components
 {
-    public class ChestIO : StorageComponent
+    public class ChestInterface : StorageComponent
     {
         // Tells tmod what this tiles tile entity is
-        public override ModTileEntity GetTileEntity() => ModContent.GetInstance<TEChestIO>();
+        public override ModTileEntity GetTileEntity() => ModContent.GetInstance<TEChestInterface>();
 
         // Tells tmod what the item that places this tile is
-        public override int ItemType(int frameX, int frameY) => ModContent.ItemType<Items.ChestIO>();
+        public override int ItemType(int frameX, int frameY) => ModContent.ItemType<Items.ChestInterface>();
 
         // Tells tmod that the block can be interacted with the smart cursor
         public override bool HasSmartInteract(int i, int j, SmartInteractScanSettings settings) => true;
