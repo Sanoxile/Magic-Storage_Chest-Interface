@@ -3,7 +3,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace ChestInterface.Contents.Items
+namespace MagicStorageAddons.Contents.Items
 {
     public class ChestInterface : ModItem
     {

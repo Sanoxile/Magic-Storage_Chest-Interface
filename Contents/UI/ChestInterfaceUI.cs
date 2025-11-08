@@ -1,9 +1,9 @@
 using MagicStorage.UI.States;
 using System.Collections.Generic;
 using Terraria.Localization;
-using ChestInterface.Contents.UI.Elements;
+using MagicStorageAddons.Contents.UI.Elements;
 
-namespace ChestInterface.Contents.UI
+namespace MagicStorageAddons.Contents.UI
 {
     public class ChestInterfaceUI : BaseStorageUI
     {

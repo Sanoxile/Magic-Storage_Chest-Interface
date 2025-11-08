@@ -5,7 +5,7 @@ using MagicStorage.Components;
 using Terraria.DataStructures;
 using System.Collections.Generic;
 
-namespace ChestInterface.Contents.Components
+namespace MagicStorageAddons.Contents.Components
 {
     public class TEChestInterface : TEStorageComponent
     {

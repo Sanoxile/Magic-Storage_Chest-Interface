@@ -8,9 +8,9 @@ using Terraria.DataStructures;
 using Terraria.GameContent.Drawing;
 using Terraria.GameContent.ObjectInteractions;
 using Terraria.ModLoader;
-using ChestInterface.Contents.UI;
+using MagicStorageAddons.Contents.UI;
 
-namespace ChestInterface.Contents.Components
+namespace MagicStorageAddons.Contents.Components
 {
     public class ChestInterface : StorageComponent
     {

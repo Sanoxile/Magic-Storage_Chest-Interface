@@ -1,8 +1,0 @@
-Tiles.ChestInterface.MapEntry: Chest Interface
-
-Items: {
-	ChestInterface: {
-		DisplayName: Chest Interface
-		Tooltip: ""
-	}
-}

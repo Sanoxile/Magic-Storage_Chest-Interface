@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework;
 using Terraria.GameContent.UI.Elements;
 using System.Collections.Generic;
 
-namespace ChestInterface.Contents.UI.Elements
+namespace MagicStorageAddons.Contents.UI.Elements
 {
     public class ChestInterfacePage(BaseStorageUI parent) : BaseStorageUIPage(parent, "Main")
     {
