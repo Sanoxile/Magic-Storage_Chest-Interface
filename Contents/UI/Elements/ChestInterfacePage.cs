@@ -1,11 +1,10 @@
 using MagicStorage.UI.States;
 using Microsoft.Xna.Framework;
 using Terraria.GameContent.UI.Elements;
-using System.Collections.Generic;
 
 namespace MagicStorageAddons.Contents.UI.Elements
 {
-    public class ChestInterfacePage(BaseStorageUI parent) : BaseStorageUIPage(parent, "Main")
+    public class ChestInterfacePage(BaseStorageUI parent) : BaseStorageUIPage(parent, "Bozo")
     {
         private UIText text;
 

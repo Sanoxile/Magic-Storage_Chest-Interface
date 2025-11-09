@@ -12,7 +12,6 @@ namespace MagicStorageAddons.Contents.Components
         // Internal vars
         public const int maxChestStorage = 5;
         internal Point16[] chestsCoords = new Point16[maxChestStorage];
-        internal List<ModItem>[] filter = new List<ModItem>[maxChestStorage];
 
         // Tells tmod that the tile accosiated with the tile entity is ChestInterface
         public override bool ValidTile(in Tile tile) => tile.HasTile && tile.TileType == ModContent.TileType<ChestInterface>();

@@ -1,4 +1,3 @@
-using MagicStorage.Items;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
