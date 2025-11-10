@@ -1,11 +1,10 @@
 using Terraria;
 using Terraria.ModLoader;
 using MagicStorageAddons.Contents.UI;
-using System.Collections.Generic;
 
 namespace MagicStorageAddons.Contents
 {
-    public class MagicStorageAddonsSystem : ModSystem
+    public class MagicStorageAddonsUI : ModSystem
     {
         // Store all addon UIs here
         public static ChestInterfaceUI ChestUI;
